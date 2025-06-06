@@ -7,21 +7,31 @@ import {
   getSkipFeatures,
 } from "../../../../libs/functions";
 import { BiCheckCircle, BiXCircle } from "react-icons/bi";
+import type { Dispatch, SetStateAction } from "react";
 
 interface SkipCardProps {
   skip: Skip;
+  selectedSkip: Skip | null;
+  setSelectedSkip: Dispatch<SetStateAction<Skip | null>>;
 }
 
-export function SkipCard({ skip }: SkipCardProps) {
+export function SkipCard({
+  skip,
+  selectedSkip,
+  setSelectedSkip,
+}: SkipCardProps) {
+  const isSelected = selectedSkip?.id === skip.id;
+
   return (
     <div
       key={skip.id}
       className="relative group cursor-pointer transition-all duration-300 hover:transform hover:scale-102"
+      onClick={() => setSelectedSkip(isSelected ? null : skip)}
     >
-      <div className="absolute -top-3 right-0 z-10 flex flex-wrap gap-2">
+      <div className="absolute -top-2 right-0 z-10 flex flex-wrap gap-2">
         {getSkipExtraFeaturesCosts(skip).map((feature, index) => (
           <div
-            className="bg-blue-700 text-white px-3 py-1 text-xs font-bold rounded-full flex items-center gap-1"
+            className="text-white px-3 py-1 text-xs font-bold bg-blue-600 rounded-lg flex items-center gap-1"
             key={`${feature}-${index}`}
           >
             {feature}
@@ -29,7 +39,13 @@ export function SkipCard({ skip }: SkipCardProps) {
         ))}
       </div>
 
-      <div className="bg-white rounded-3xl p-8 h-full shadow-lg border-2 transition-all duration-300 border-gray-100 hover:border-gray-200 hover:shadow-xl">
+      <div
+        className={`bg-white rounded-3xl p-8 h-full shadow-lg border-2 transition-all duration-300 ${
+          isSelected
+            ? "border-blue-600 shadow-blue-100"
+            : "border-gray-100 hover:border-gray-200 hover:shadow-xl"
+        }`}
+      >
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
             {skip.size} Yard Skip
@@ -68,8 +84,16 @@ export function SkipCard({ skip }: SkipCardProps) {
           ))}
         </div>
 
-        <button className="w-full py-4 px-6 rounded-2xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer">
-          Select Skip <BsArrowRight className="w-4 h-4" />
+        <button
+          onClick={() => setSelectedSkip(isSelected ? null : skip)}
+          className={`w-full py-4 px-6 rounded-2xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+            isSelected
+              ? "bg-blue-600 text-white hover:bg-blue-700"
+              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+          }`}
+        >
+          {isSelected ? "Selected" : "Select Skip"}{" "}
+          {!isSelected && <BsArrowRight className="w-4 h-4" />}
         </button>
       </div>
     </div>

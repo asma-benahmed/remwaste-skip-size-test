@@ -4,8 +4,11 @@ import { SkipCard } from "./SkipCard";
 import { AnimatedWrapper } from "../../../../components/AnimatedWrapper";
 import { useSkips } from "../../../../hooks/use-fetch-skips";
 import type { Skip } from "../../../../types/skip";
+import { useState } from "react";
 
 export const SkipsList = () => {
+  const [selectedSkip, setSelectedSkip] = useState<Skip | null>(null);
+
   const { data: skips, isLoading } = useSkips();
   const skipsList = !isLoading && skips ? skips : defaultSkips;
 
@@ -20,7 +23,11 @@ export const SkipsList = () => {
           y={20}
           onceInView={true}
         >
-          <SkipCard skip={skip} />
+          <SkipCard
+            skip={skip}
+            selectedSkip={selectedSkip}
+            setSelectedSkip={setSelectedSkip}
+          />
         </AnimatedWrapper>
       ))}
     </div>
