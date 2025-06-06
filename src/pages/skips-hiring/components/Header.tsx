@@ -4,8 +4,7 @@ import { AnimatedWrapper } from "../../../components/AnimatedWrapper";
 export const Header = () => {
   return (
     <AnimatedWrapper y={-20} duration={0.6} className="mb-8">
-      <div className="flex justify-center items-center gap-6">
-        {/* Icon on the left */}
+      <div className="flex flex-col md:flex-row justify-center items-center gap-6">
         <AnimatedWrapper
           scale={1}
           delay={0.02}
@@ -14,7 +13,6 @@ export const Header = () => {
           <PiTruckTrailerLight className="w-6 h-6 text-white" />
         </AnimatedWrapper>
 
-        {/* Texts stacked on the right */}
         <div className="flex flex-col items-center text-center">
           <AnimatedWrapper
             delay={0.02}
@@ -34,3 +32,4 @@ export const Header = () => {
     </AnimatedWrapper>
   );
 };
+
