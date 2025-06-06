@@ -7,7 +7,7 @@ import { SelectedSkipFooter } from "../SelectedSkipFooter";
 import { useSkipsFilters } from "../../hooks/use-filter-skips";
 import { useSkips } from "../../hooks/use-fetch-skips";
 import { AnimatedWrapper } from "../../../../components/AnimatedWrapper";
-import { SkipsFilters } from "./SkipsFilters";
+import { SkipsFilters } from "../skips-filters";
 
 export const SkipsList = () => {
   const [selectedSkip, setSelectedSkip] = useState<Skip | null>(null);

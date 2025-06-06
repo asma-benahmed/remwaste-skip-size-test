@@ -26,3 +26,26 @@ export interface SelectedSkipFooterProps {
   selectedSkip: Skip;
   setSelectedSkip: Dispatch<SetStateAction<Skip | null>>;
 }
+
+export type FilterSummaryProps = {
+  filteredCount: number;
+  totalCount: number;
+  onClear: () => void;
+};
+
+export type PriceRangeSliderProps = {
+  min: number;
+  max: number;
+  valueMin: number;
+  valueMax: number;
+  setValueMin: (value: number) => void;
+  setValueMax: (value: number) => void;
+};
+
+export type ToggleFilterProps = {
+  id: string;
+  label: string;
+  checked: boolean | null;
+  onChange: (value: boolean | null) => void;
+  activeColor: string;
+};
