@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { Skip } from "../types/skip";
+import type { Skip } from "../types/data";
 
 const fetchSkips = async (): Promise<Skip[]> => {
   const response = await fetch(

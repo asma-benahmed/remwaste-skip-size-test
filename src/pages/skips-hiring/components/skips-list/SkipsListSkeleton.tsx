@@ -1,7 +1,7 @@
 export const SkipsListSkeleton = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 px-12">
-      {Array.from({ length: 3 }).map((_, index: number) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 px-12">
+      {Array.from({ length: 4 }).map((_, index: number) => (
         <div
           key={index}
           className="bg-white rounded-3xl p-8 h-full shadow-lg border-2 border-gray-100 animate-pulse"

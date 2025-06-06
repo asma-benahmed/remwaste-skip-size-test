@@ -1,13 +1,5 @@
-"use client";
-
-import type { Dispatch, SetStateAction } from "react";
-import type { Skip } from "../../../types/skip";
 import { calculatePriceWithVAT } from "../../../libs/functions";
-
-interface SelectedSkipFooterProps {
-  selectedSkip: Skip;
-  setSelectedSkip: Dispatch<SetStateAction<Skip | null>>;
-}
+import type { SelectedSkipFooterProps } from "../types/components";
 
 export const SelectedSkipFooter = ({
   selectedSkip,

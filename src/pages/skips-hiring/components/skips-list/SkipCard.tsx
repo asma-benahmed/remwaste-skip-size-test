@@ -1,4 +1,3 @@
-import type { Skip } from "../../../../types/skip";
 import { BsArrowRight } from "react-icons/bs";
 import { CiCalendarDate } from "react-icons/ci";
 import {
@@ -7,13 +6,7 @@ import {
   getSkipFeatures,
 } from "../../../../libs/functions";
 import { BiCheckCircle, BiXCircle } from "react-icons/bi";
-import type { Dispatch, SetStateAction } from "react";
-
-interface SkipCardProps {
-  skip: Skip;
-  selectedSkip: Skip | null;
-  setSelectedSkip: Dispatch<SetStateAction<Skip | null>>;
-}
+import type { SkipCardProps } from "../../types/components";
 
 export function SkipCard({
   skip,
@@ -28,7 +21,7 @@ export function SkipCard({
       className="relative group cursor-pointer transition-all duration-300 hover:transform hover:scale-102"
       onClick={() => setSelectedSkip(isSelected ? null : skip)}
     >
-      <div className="absolute -top-2 right-0 z-10 flex flex-wrap gap-2">
+      <div className="absolute -top-2 right-1 z-10 flex flex-wrap gap-2">
         {getSkipExtraFeaturesCosts(skip).map((feature, index) => (
           <div
             className="text-white px-3 py-1 text-xs font-bold bg-blue-600 rounded-lg flex items-center gap-1"
@@ -47,14 +40,14 @@ export function SkipCard({
         }`}
       >
         <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+          <h3 className="text-xl font-bold text-gray-900 mb-2">
             {skip.size} Yard Skip
           </h3>
           <p className="text-gray-500 font-medium">{skip.size} cubic yards</p>
         </div>
 
         <div className="text-center mb-8">
-          <div className="text-4xl font-bold text-gray-900 mb-2">
+          <div className="text-3xl font-bold text-gray-900 mb-2">
             £{calculatePriceWithVAT(skip).toFixed(2)}
           </div>
           <div className="text-sm text-gray-500 mb-2">
@@ -86,7 +79,7 @@ export function SkipCard({
 
         <button
           onClick={() => setSelectedSkip(isSelected ? null : skip)}
-          className={`w-full py-4 px-6 rounded-2xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+          className={`w-full py-2 px-4 rounded-2xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
             isSelected
               ? "bg-blue-600 text-white hover:bg-blue-700"
               : "bg-gray-100 text-gray-700 hover:bg-gray-200"
