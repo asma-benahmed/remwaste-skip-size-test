@@ -1,11 +1,11 @@
-import type { Skip } from "../../types/skip";
+import type { Skip } from "../../../../types/skip";
 import { BsArrowRight } from "react-icons/bs";
 import { CiCalendarDate } from "react-icons/ci";
 import {
   calculatePriceWithVAT,
   getSkipExtraFeaturesCosts,
   getSkipFeatures,
-} from "../../libs/functions";
+} from "../../../../libs/functions";
 import { BiCheckCircle, BiXCircle } from "react-icons/bi";
 
 interface SkipCardProps {

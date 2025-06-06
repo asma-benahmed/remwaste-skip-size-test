@@ -1,9 +1,9 @@
 import { defaultSkips } from "../../data/skips";
-import { useSkips } from "../../hooks/use-fetch-skips";
-import type { Skip } from "../../types/skip";
 import { SkipsListSkeleton } from "../SkipsListSkeleton";
 import { SkipCard } from "./SkipCard";
-import { AnimatedWrapper } from "../AnimatedWrapper";
+import { AnimatedWrapper } from "../../../../components/AnimatedWrapper";
+import { useSkips } from "../../../../hooks/use-fetch-skips";
+import type { Skip } from "../../../../types/skip";
 
 export const SkipsList = () => {
   const { data: skips, isLoading } = useSkips();

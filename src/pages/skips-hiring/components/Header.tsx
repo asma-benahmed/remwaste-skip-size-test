@@ -1,5 +1,5 @@
 import { PiTruckTrailerLight } from "react-icons/pi";
-import { AnimatedWrapper } from "./AnimatedWrapper";
+import { AnimatedWrapper } from "../../../components/AnimatedWrapper";
 
 export const Header = () => {
   return (
