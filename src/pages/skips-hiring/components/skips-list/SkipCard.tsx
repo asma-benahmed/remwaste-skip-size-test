@@ -40,9 +40,9 @@ export function SkipCard({
         }`}
       >
         <div className="text-center mb-8">
-          <h3 className="text-xl font-bold text-gray-900 mb-2">
+          <h2 className="text-xl font-bold text-gray-900 mb-2">
             {skip.size} Yard Skip
-          </h3>
+          </h2>
           <p className="text-gray-500 font-medium">{skip.size} cubic yards</p>
         </div>
 

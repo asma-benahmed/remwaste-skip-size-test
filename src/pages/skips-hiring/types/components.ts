@@ -49,3 +49,14 @@ export type ToggleFilterProps = {
   onChange: (value: boolean | null) => void;
   activeColor: string;
 };
+
+export interface AccessibleRangeSliderProps {
+  value: number;
+  min: number;
+  max: number;
+  ariaLabel: string;
+  onChange: (value: number) => void;
+  thumbColorClass: string;
+  constraintValue?: number;
+  constrainFn?: (inputValue: number, constraintValue: number) => number;
+}

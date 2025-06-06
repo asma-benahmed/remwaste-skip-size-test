@@ -1,4 +1,5 @@
 import type { PriceRangeSliderProps } from "../../types/components";
+import AccessibleRangeSlider from "./AccessibleRangeSlider";
 
 export const PriceRangeSlider = ({
   min,
@@ -25,27 +26,28 @@ export const PriceRangeSlider = ({
           />
         </div>
 
-        <input
-          type="range"
+        <AccessibleRangeSlider
+          value={valueMin}
           min={min}
           max={max}
-          value={valueMin}
-          onChange={(e) =>
-            setValueMin(Math.min(Number(e.target.value), valueMax - 1))
-          }
-          className="absolute top-0 w-full h-2 bg-transparent appearance-none pointer-events-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white"
+          ariaLabel="Minimum value"
+          onChange={(val) => setValueMin(val)}
+          thumbColorClass="bg-blue-600"
+          constraintValue={valueMax}
+          constrainFn={(input, max) => Math.min(input, max - 1)}
         />
 
-        <input
-          type="range"
+        <AccessibleRangeSlider
+          value={valueMax}
           min={min}
           max={max}
-          value={valueMax}
-          onChange={(e) =>
-            setValueMax(Math.max(Number(e.target.value), valueMin + 1))
-          }
-          className="absolute top-0 w-full h-2 bg-transparent appearance-none pointer-events-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-indigo-600 [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white"
+          ariaLabel="Maximum value"
+          onChange={(val) => setValueMax(val)}
+          thumbColorClass="bg-indigo-600"
+          constraintValue={valueMin}
+          constrainFn={(input, min) => Math.max(input, min + 1)}
         />
+
       </div>
       <div className="flex justify-between text-xs text-slate-500 mt-2">
         <span>£{min}</span>
