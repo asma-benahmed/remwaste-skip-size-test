@@ -25,29 +25,25 @@ export const PriceRangeSlider = ({
             }}
           />
         </div>
+          <AccessibleRangeSlider
+            value={valueMin}
+            min={min}
+            max={max}
+            ariaLabel="Minimum value"
+            onChange={(val) => setValueMin(val)}
+            constraintValue={valueMax}
+            constrainFn={(input, max) => Math.min(input, max - 1)}
+          />
 
-        <AccessibleRangeSlider
-          value={valueMin}
-          min={min}
-          max={max}
-          ariaLabel="Minimum value"
-          onChange={(val) => setValueMin(val)}
-          thumbColorClass="bg-blue-600"
-          constraintValue={valueMax}
-          constrainFn={(input, max) => Math.min(input, max - 1)}
-        />
-
-        <AccessibleRangeSlider
-          value={valueMax}
-          min={min}
-          max={max}
-          ariaLabel="Maximum value"
-          onChange={(val) => setValueMax(val)}
-          thumbColorClass="bg-indigo-600"
-          constraintValue={valueMin}
-          constrainFn={(input, min) => Math.max(input, min + 1)}
-        />
-
+          <AccessibleRangeSlider
+            value={valueMax}
+            min={min}
+            max={max}
+            ariaLabel="Maximum value"
+            onChange={(val) => setValueMax(val)}
+            constraintValue={valueMin}
+            constrainFn={(input, min) => Math.max(input, min + 1)}
+          />
       </div>
       <div className="flex justify-between text-xs text-slate-500 mt-2">
         <span>£{min}</span>

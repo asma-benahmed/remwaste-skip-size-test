@@ -7,7 +7,6 @@ const AccessibleRangeSlider: React.FC<AccessibleRangeSliderProps> = ({
   max,
   ariaLabel,
   onChange,
-  thumbColorClass,
   constraintValue,
   constrainFn,
 }) => {
@@ -26,17 +25,7 @@ const AccessibleRangeSlider: React.FC<AccessibleRangeSliderProps> = ({
             : inputValue;
         onChange(newValue);
       }}
-      className={`absolute top-1 w-full h-2 bg-transparent appearance-none pointer-events-none
-  [&::-webkit-slider-thumb]:appearance-none
-  [&::-webkit-slider-thumb]:h-6
-  [&::-webkit-slider-thumb]:w-6
-  [&::-webkit-slider-thumb]:mt-[-12px]
-  [&::-webkit-slider-thumb]:rounded-full
-  [&::-webkit-slider-thumb]:${thumbColorClass}
-  [&::-webkit-slider-thumb]:pointer-events-auto
-  [&::-webkit-slider-thumb]:shadow-lg
-  [&::-webkit-slider-thumb]:border-2
-  [&::-webkit-slider-thumb]:border-white`}
+      className={`accessible-range`}
     />
   );
 };

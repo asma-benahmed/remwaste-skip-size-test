@@ -56,7 +56,6 @@ export interface AccessibleRangeSliderProps {
   max: number;
   ariaLabel: string;
   onChange: (value: number) => void;
-  thumbColorClass: string;
   constraintValue?: number;
   constrainFn?: (inputValue: number, constraintValue: number) => number;
 }
