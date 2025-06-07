@@ -77,3 +77,9 @@ pnpm dev
 ![Skip selection](./public/images/readme/skip-selection.png)
 ![Filters](./public/images/readme/filters.png)
 ![uNREACHED FILTERS](./public/images/readme/unreached-filter.png)
+
+# Live Demo
+
+Click below to test the project on CodeSandbox:
+
+👉 [Open in CodeSandbox](https://xkmfrs-5173.csb.app/app/skips)
