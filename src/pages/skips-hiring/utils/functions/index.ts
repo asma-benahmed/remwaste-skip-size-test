@@ -1,4 +1,4 @@
-import type { Skip } from "../../pages/skips-hiring/types/data";
+import type { Skip } from "../../../types/data";
 
 export function calculatePriceWithVAT(skip: Skip): number {
   const { price_before_vat, vat } = skip;

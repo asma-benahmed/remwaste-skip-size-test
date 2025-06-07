@@ -18,21 +18,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Common range slider base */
+/* Range slider base */
 .accessible-range {
   @apply absolute top-1 w-full h-[48px] bg-transparent appearance-none pointer-events-auto;
 }
 
 .accessible-range::-webkit-slider-thumb {
-   padding: 10px 0; 
-  -webkit-appearance: none; 
   appearance: none;
   height: 1.5rem; 
   width: 1.5rem;
   margin-top: -36px !important;
-  border-radius: 9999px;
-  pointer-events: auto;
+  border-radius: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border: 2px solid white;
   background-color: #2563eb; 
+  cursor: pointer;
 }

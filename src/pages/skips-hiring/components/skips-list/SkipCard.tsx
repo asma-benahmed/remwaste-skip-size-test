@@ -1,12 +1,13 @@
 import { BsArrowRight } from "react-icons/bs";
 import { CiCalendarDate } from "react-icons/ci";
+
+import { BiCheckCircle, BiXCircle } from "react-icons/bi";
+import type { SkipCardProps } from "../../types/components";
 import {
   calculatePriceWithVAT,
   getSkipExtraFeaturesCosts,
   getSkipFeatures,
-} from "../../../../libs/functions";
-import { BiCheckCircle, BiXCircle } from "react-icons/bi";
-import type { SkipCardProps } from "../../types/components";
+} from "../../utils/functions";
 
 export function SkipCard({
   skip,

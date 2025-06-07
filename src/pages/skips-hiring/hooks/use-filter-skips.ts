@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import type { Skip } from "../types/data";
-import { calculatePriceWithVAT } from "../../../libs/functions";
+import { calculatePriceWithVAT } from "../utils/functions";
 
 export const useSkipsFilters = (skipsList: Skip[]) => {
   // Filter states

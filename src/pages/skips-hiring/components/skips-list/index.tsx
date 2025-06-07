@@ -1,4 +1,3 @@
-import { defaultSkips } from "../../data/skips";
 import { SkipCard } from "./SkipCard";
 import type { Skip } from "../../types/data";
 import { useState } from "react";
@@ -6,8 +5,9 @@ import { SkipsListSkeleton } from "./SkipsListSkeleton";
 import { SelectedSkipFooter } from "../SelectedSkipFooter";
 import { useSkipsFilters } from "../../hooks/use-filter-skips";
 import { useSkips } from "../../hooks/use-fetch-skips";
-import { AnimatedWrapper } from "../../../../components/AnimatedWrapper";
+import { AnimatedWrapper } from "../AnimatedWrapper";
 import { SkipsFilters } from "../skips-filters";
+import { defaultSkips } from "../../utils/data/skips";
 
 export const SkipsList = () => {
   const [selectedSkip, setSelectedSkip] = useState<Skip | null>(null);

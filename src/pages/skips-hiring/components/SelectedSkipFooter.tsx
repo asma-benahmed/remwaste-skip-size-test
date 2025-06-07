@@ -1,5 +1,6 @@
-import { calculatePriceWithVAT } from "../../../libs/functions";
+import ActionButtons from "../../../components/ActionButton";
 import type { SelectedSkipFooterProps } from "../types/components";
+import { calculatePriceWithVAT } from "../utils/functions";
 
 export const SelectedSkipFooter = ({
   selectedSkip,
@@ -66,20 +67,12 @@ export const SelectedSkipFooter = ({
             </div>
 
             {/* Action buttons */}
-            <div className="flex space-x-2 w-full sm:w-auto">
-              <button
-                onClick={handleCancel}
-                className="flex-1 sm:flex-none px-4 py-2 rounded-lg text-white border border-slate-600 hover:border-slate-500 hover:bg-slate-800/50 transition-all duration-300 text-sm cursor-pointer"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleContinue}
-                className="flex-1 sm:flex-none px-5 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium shadow-md shadow-blue-500/25 hover:shadow-blue-500/40 transform hover:-translate-y-0.5 transition-all duration-300 text-sm cursor-pointer"
-              >
-                Continue
-              </button>
-            </div>
+            <ActionButtons
+              onCancel={handleCancel}
+              onContinue={handleContinue}
+              cancelLabel="Cancel"
+              continueLabel="Continue"
+            />
           </div>
         </div>
       </div>

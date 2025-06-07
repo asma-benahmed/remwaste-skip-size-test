@@ -1,16 +1,5 @@
-import type { HTMLAttributes, ReactNode } from "react";
-import { motion } from "framer-motion";
-
-type AnimatedWrapperProps = {
-  children: ReactNode;
-  delay?: number;
-  y?: number;
-  scale?: number;
-  duration?: number;
-  fromOpacity?: number;
-  toOpacity?: number;
-  onceInView?: boolean;
-} & HTMLAttributes<HTMLDivElement>;
+import { motion, type HTMLMotionProps } from "framer-motion";
+import type { AnimatedWrapperProps } from "../types/components";
 
 export const AnimatedWrapper = ({
   children,
@@ -22,7 +11,7 @@ export const AnimatedWrapper = ({
   toOpacity = 1,
   onceInView = true,
   ...rest
-}: AnimatedWrapperProps) => {
+}: AnimatedWrapperProps & HTMLMotionProps<"div">) => {
   const initial = {
     opacity: fromOpacity,
     y,

@@ -1,4 +1,9 @@
-import type { Dispatch, SetStateAction } from "react";
+import type {
+  Dispatch,
+  HTMLAttributes,
+  ReactNode,
+  SetStateAction,
+} from "react";
 import type { Skip } from "./data";
 
 export interface SkipsFiltersProps {
@@ -59,3 +64,14 @@ export interface AccessibleRangeSliderProps {
   constraintValue?: number;
   constrainFn?: (inputValue: number, constraintValue: number) => number;
 }
+
+export type AnimatedWrapperProps = {
+  children: ReactNode;
+  delay?: number;
+  y?: number;
+  scale?: number;
+  duration?: number;
+  fromOpacity?: number;
+  toOpacity?: number;
+  onceInView?: boolean;
+} & HTMLAttributes<HTMLDivElement>;
