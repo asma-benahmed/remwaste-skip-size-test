@@ -27,7 +27,7 @@ export const NoSkips = ({ onClearFilters }: NoSkipsProps) => {
         </p>
         <button
           onClick={onClearFilters}
-          className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+          className="cursor-pointer px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
         >
           Clear All Filters
         </button>
