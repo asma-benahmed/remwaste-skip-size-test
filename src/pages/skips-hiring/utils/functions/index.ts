@@ -22,17 +22,3 @@ export const getSkipFeatures = (skip: Skip) => {
 
   return features;
 };
-
-export const getSkipExtraFeaturesCosts = (skip: Skip) => {
-  const extraFeaturesCosts = [];
-
-  if (skip.transport_cost) {
-    extraFeaturesCosts.push(`Transport: £${skip.transport_cost}`);
-  }
-
-  if (skip.per_tonne_cost) {
-    extraFeaturesCosts.push(`Per tonne: £${skip.per_tonne_cost}`);
-  }
-
-  return extraFeaturesCosts;
-};
