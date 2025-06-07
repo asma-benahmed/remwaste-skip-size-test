@@ -70,4 +70,10 @@ pnpm dev
 ├─ node_modules/        # Third-party dependencies (auto-generated)
 ├─ index.html           # Application HTML template
 └─ vite.config.ts       # Vite configuration (build, plugins, etc.)
+```
+# Project Overview
 
+![Skips list](./public/images/readme/skips-list.png)
+![Skip selection](./public/images/readme/skip-selection.png)
+![Filters](./public/images/readme/filters.png)
+![uNREACHED FILTERS](./public/images/readme/unreached-filter.png)
