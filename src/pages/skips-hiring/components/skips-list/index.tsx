@@ -35,29 +35,27 @@ export const SkipsList = () => {
 
   return (
     <>
-      <AnimatedWrapper y={-20} duration={0.6}>
-        <SkipsFilters
-          minPrice={minPrice}
-          maxPrice={maxPrice}
-          setMinPrice={setMinPrice}
-          setMaxPrice={setMaxPrice}
-          allowedOnRoad={allowedOnRoad}
-          setAllowedOnRoad={setAllowedOnRoad}
-          heavyWasteAccepted={heavyWasteAccepted}
-          setHeavyWasteAccepted={setHeavyWasteAccepted}
-          filteredCount={filteredCount}
-          totalCount={totalCount}
-          priceBounds={priceBounds}
-          onClearFilters={clearFilters}
-        />
-      </AnimatedWrapper>
+      <SkipsFilters
+        minPrice={minPrice}
+        maxPrice={maxPrice}
+        setMinPrice={setMinPrice}
+        setMaxPrice={setMaxPrice}
+        allowedOnRoad={allowedOnRoad}
+        setAllowedOnRoad={setAllowedOnRoad}
+        heavyWasteAccepted={heavyWasteAccepted}
+        setHeavyWasteAccepted={setHeavyWasteAccepted}
+        filteredCount={filteredCount}
+        totalCount={totalCount}
+        priceBounds={priceBounds}
+        onClearFilters={clearFilters}
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 px-6 sm:px-12">
         {filteredSkips.length > 0 ? (
           filteredSkips.map((skip: Skip, index: number) => (
             <AnimatedWrapper
               key={skip.id}
-              delay={index * 0.1}
+              delay={index * 0.05}
               y={20}
               onceInView={true}
             >
