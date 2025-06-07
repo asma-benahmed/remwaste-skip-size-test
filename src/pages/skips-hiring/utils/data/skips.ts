@@ -1,4 +1,4 @@
-import type { Skip } from "../../../types/data";
+import type { Skip } from "../../types/data";
 
 export const defaultSkips: Skip[] = [
   {
