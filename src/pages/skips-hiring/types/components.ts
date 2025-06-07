@@ -75,3 +75,7 @@ export type AnimatedWrapperProps = {
   toOpacity?: number;
   onceInView?: boolean;
 } & HTMLAttributes<HTMLDivElement>;
+
+export type NoSkipsProps = {
+  onClearFilters: () => void;
+};
